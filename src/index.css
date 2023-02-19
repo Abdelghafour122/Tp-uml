@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  #root {
+    @apply min-h-screen h-full;
+  }
+
+  .link {
+    @apply text-lg text-blue-800 underline font-bold hover:text-blue-500;
+  }
+
+  .nav-link {
+    @apply text-stone-800 font-semibold;
+  }
+
+  .button {
+    @apply px-3 py-1 bg-green-800/80 rounded-sm text-lg font-semibold text-stone-100 shadow-md;
+    @apply hover:bg-green-800;
+  }
+}
