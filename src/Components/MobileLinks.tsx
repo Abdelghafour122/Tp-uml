@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
+import NavLink from "./Navbar/NavLink";
 
 type Props = {
   handleCloseMobileLinks: () => void;
@@ -13,23 +14,31 @@ const MobileLinks = ({ handleCloseMobileLinks }: Props) => {
           onClick={handleCloseMobileLinks}
           className="p-1 rounded-full float-right hover:bg-stone-300"
         >
-          <FaTimes className="text-3xl text-stone-700" />
+          <FaTimes className="text-3xl text-green-800/80" />
         </button>
       </div>
       <div className="p-3 rounded-md shadow bg-stone-300 w-3/4">
         <ul className="w-full flex flex-col items-center justify-between gap-5">
-          <li>
-            <button className="nav-link">Acceuil</button>
-          </li>
-          <li>
-            <button className="nav-link">À propos</button>
-          </li>
-          <li>
-            <button className="nav-link">Contacter</button>
-          </li>
-          <li>
-            <button className="nav-link">Services</button>
-          </li>
+          <NavLink
+            text="Acceuil"
+            targetPath="/"
+            clickBehavior={handleCloseMobileLinks}
+          />
+          <NavLink
+            text="À propos"
+            targetPath="/a-propos"
+            clickBehavior={handleCloseMobileLinks}
+          />
+          <NavLink
+            text="Contacter"
+            targetPath="/contacter"
+            clickBehavior={handleCloseMobileLinks}
+          />
+          <NavLink
+            text="Services"
+            targetPath="/services"
+            clickBehavior={handleCloseMobileLinks}
+          />
           <li>
             <button className="button">Rendezvous</button>
           </li>
