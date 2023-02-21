@@ -7,6 +7,14 @@
     @apply min-h-screen h-full;
   }
 
+  .large-header {
+    @apply text-4xl md:text-5xl lg:text-7xl font-semibold;
+  }
+
+  .sub-p {
+    @apply text-lg;
+  }
+
   .link {
     @apply text-lg text-blue-800 underline font-bold hover:text-blue-500;
   }
@@ -18,5 +26,14 @@
   .button {
     @apply px-3 py-1 bg-green-800/80 rounded-sm text-lg font-semibold text-stone-100 shadow-md;
     @apply hover:bg-green-800;
+  }
+
+  .outlay {
+    @apply bg-gradient-to-b from-neutral-900/90 to-neutral-900/70 absolute top-0 left-0 w-full h-full;
+  }
+
+  /* PAGES */
+  .hero {
+    @apply h-screen;
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
-import NavLink from "./Navbar/NavLink";
+import NavLink from "./NavLink";
 
 type Props = {
   handleCloseMobileLinks: () => void;
@@ -8,7 +8,7 @@ type Props = {
 
 const MobileLinks = ({ handleCloseMobileLinks }: Props) => {
   return (
-    <div className="backdrop-blur-sm absolute left-0 top-0 w-full min-h-screen h-full flex flex-col items-center justify-center">
+    <div className="backdrop-blur-sm absolute z-50 left-0 top-0 w-full min-h-screen h-full flex flex-col items-center justify-center">
       <div className="w-3/4 mb-2">
         <button
           onClick={handleCloseMobileLinks}

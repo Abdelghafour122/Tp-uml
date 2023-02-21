@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 type Props = {
   text: string;
@@ -8,18 +7,17 @@ type Props = {
 };
 
 const NavLink = ({ text, targetPath, clickBehavior }: Props) => {
-  const navigate = useNavigate();
   return (
     <li>
-      <button
+      <a
+        href={targetPath}
         onClick={() => {
-          navigate(targetPath);
           clickBehavior !== undefined ? clickBehavior() : null;
         }}
-        className="py-1 px-2 hover:bg-green-500/30 rounded transition md:text-sm lg:text-base"
+        className="py-1 px-2 hover:bg-green-500/30 rounded transition md:text-sm lg:text-base cursor-pointer"
       >
         {text}
-      </button>
+      </a>
     </li>
   );
 };
