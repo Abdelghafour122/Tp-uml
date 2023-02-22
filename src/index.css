@@ -8,11 +8,11 @@
   }
 
   .large-header {
-    @apply text-4xl md:text-5xl lg:text-7xl font-semibold;
+    @apply text-5xl md:text-5xl lg:text-7xl font-semibold;
   }
 
-  .sub-p {
-    @apply text-lg;
+  .smaller-header {
+    @apply text-5xl md:text-4xl lg:text-6xl font-bold;
   }
 
   .link {
@@ -25,11 +25,24 @@
 
   .button {
     @apply px-3 py-1 bg-green-800/80 rounded-sm text-lg font-semibold text-stone-100 shadow-md;
-    @apply hover:bg-green-800;
+    @apply hover:bg-green-800 transition-colors;
+  }
+
+  .reverse-button {
+    @apply px-3 py-1 bg-green-200/80 rounded-sm text-lg font-semibold text-green-900 shadow-md;
+    @apply hover:bg-green-500/50 transition-colors;
   }
 
   .outlay {
     @apply bg-gradient-to-b from-neutral-900/90 to-neutral-900/70 absolute top-0 left-0 w-full h-full;
+  }
+
+  .img-cont {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  .sub-img-p {
+    @apply font-semibold text-xl capitalize text-stone-800 text-center;
   }
 
   /* PAGES */

@@ -17,7 +17,9 @@ const Navbar = () => {
   return (
     <nav className="flex w-full py-2 px-3 bg-stone-100 md:gap-24 lg:gap-40 shadow items-center justify-between relative">
       <div className="logo">
-        <p className="text-xl lg:text-2xl font-bold text-green-800">Medic</p>
+        <p className="text-xl lg:text-2xl font-bold text-green-800 uppercase">
+          Clinical
+        </p>
       </div>
       <ul className="hidden md:flex items-center justify-between md:basis-7/12 lg:basis-2/4">
         <NavLink text="Acceuil" targetPath="#intro" />
