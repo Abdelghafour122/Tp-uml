@@ -5,6 +5,11 @@ import nutrition from "../assets/nutrition.webp";
 import sleep from "../assets/sleep.webp";
 import supplements from "../assets/supplements.webp";
 
+import dayRound from "../assets/24-hours.png";
+import doctor from "../assets/doctor.png";
+import ambulance from "../assets/ambulance.png";
+import examine from "../assets/examination.png";
+
 type Props = {};
 
 const Services = (props: Props) => {
@@ -56,11 +61,63 @@ const Services = (props: Props) => {
             <p className="sub-img-p">sommeil</p>
           </div>
         </div>
-        <div className="second-grid-container grid grid-cols-2 w-full">
-          <div className="service"></div>
-          <div className="service"></div>
-          <div className="service"></div>
-          <div className="service"></div>
+        <div className="second-grid-container grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-12 lg:gap-7 w-full mt-10 md:mt-16 lg:mt-28">
+          <div className="service flex flex-col items-center justify-start gap-2 md:gap-5">
+            <img src={ambulance} alt="ambulance" className="h-20 md:h-28" />
+            <div className="text text-center flex flex-col items-center justify-start">
+              <h2 className="text-lg font-semibold">Services d'urgence</h2>
+              <p className="text-sm sm:text-base w-full sm:w-3/4">
+                Nous sommes toujours prêts pour les urgences, à tout moment et
+                en toutes circonstances
+              </p>
+            </div>
+          </div>
+          <div className="service flex flex-col items-center justify-start gap-2 md:gap-5">
+            <img src={doctor} alt="doctor" className="h-20 md:h-28" />
+            <div className="text text-center flex flex-col items-center justify-start">
+              <h2 className="text-lg font-semibold">Médecins qualifiés</h2>
+              <p className="text-sm sm:text-base w-full sm:w-3/4">
+                Nos médecins compétents essaieront toujours de fournir le
+                meilleur traitement possible
+              </p>
+            </div>
+          </div>
+          <div className="service flex flex-col items-center justify-start gap-2 md:gap-5">
+            <img src={dayRound} alt="24-hours" className="h-20 md:h-28" />
+            <div className="text text-center flex flex-col items-center justify-start">
+              <h2 className="text-lg font-semibold">
+                Service 24 heures sur 24
+              </h2>
+              <p className="text-sm sm:text-base w-full sm:w-3/4">
+                Notre personnel est toujours présent, pour fournir des soins à
+                tout moment nécessaire
+              </p>
+            </div>
+          </div>
+          <div className="service flex flex-col items-center justify-start gap-2 md:gap-5">
+            <img src={examine} alt="examination" className="h-20 md:h-28" />
+            <div className="text text-center flex flex-col items-center justify-start">
+              <h2 className="text-lg font-semibold">Bilan extérieur</h2>
+              <p className="text-sm sm:text-base w-full sm:w-3/4">
+                Notre objectif est de nous assurer que nos patients reçoivent la
+                meilleure aide
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="prio relative w-full flex items-center justify-center bg-[url('./assets/background8.jpg')] bg-center bg-cover bg-no-repeat bg-fixed">
+        <div className="outlay"></div>
+        <div className="content relative py-7 px-10 my-16 flex flex-col items-center justify-center gap-5 lg:gap-10">
+          <h1 className="text-center large-header text-stone-50">
+            Votre santé est notre priorité
+          </h1>
+          <p className="text-center text-base sm:text-xl w-2/3 text-stone-200">
+            Chez CLINICAL, nous établissons des normes élevées de qualité, de
+            recherche et de transparence pour ce que nous partageons,
+            garantissant que vous n'avez accès qu'au meilleur.
+          </p>
+          <button className="button">Rendezvous</button>
         </div>
       </div>
     </div>
