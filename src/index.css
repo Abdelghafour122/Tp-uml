@@ -38,11 +38,11 @@
   }
 
   .img-cont {
-    @apply flex flex-col items-center justify-center;
+    @apply flex flex-col items-center justify-start;
   }
 
   .sub-img-p {
-    @apply font-semibold text-xl capitalize text-stone-800 text-center;
+    @apply font-semibold text-base md:text-xl capitalize text-stone-800 text-center;
   }
 
   /* PAGES */
