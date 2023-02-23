@@ -14,7 +14,7 @@ type Props = {};
 
 const Services = (props: Props) => {
   return (
-    <div id="services" className="bg-stone-200 my-20">
+    <div id="services" className="bg-stone-200">
       <div className="py-10 px-3 flex flex-col items-center justify-between gap-10">
         <div className="text">
           <h1 className="smaller-header text-stone-700">Nos services</h1>
@@ -112,7 +112,7 @@ const Services = (props: Props) => {
           <h1 className="text-center large-header text-stone-50">
             Votre santé est notre priorité
           </h1>
-          <p className="text-center text-base sm:text-xl w-2/3 text-stone-200">
+          <p className="text-center text-base sm:text-xl w-full md:w-2/3 text-stone-200">
             Chez CLINICAL, nous établissons des normes élevées de qualité, de
             recherche et de transparence pour ce que nous partageons,
             garantissant que vous n'avez accès qu'au meilleur.

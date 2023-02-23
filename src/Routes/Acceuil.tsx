@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Footer from "../Components/Footer";
 import Apropos from "./Apropos";
 import Contacter from "./Contacter";
 import Services from "./Services";
@@ -44,6 +45,7 @@ const Acceuil = (props: Props) => {
       <Apropos />
       <Services />
       <Contacter />
+      <Footer />
     </div>
   );
 };

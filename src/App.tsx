@@ -13,9 +13,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route element={<Acceuil />} index path="/" />
-        {/* <Route element={<Apropos />} path="/a-propos" />
-        <Route element={<Contacter />} path="/contacter" />
-        <Route element={<Services />} path="/services" /> */}
       </Routes>
       <Attribution />
     </div>
