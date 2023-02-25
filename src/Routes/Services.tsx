@@ -9,10 +9,12 @@ import dayRound from "../assets/24-hours.png";
 import doctor from "../assets/doctor.png";
 import ambulance from "../assets/ambulance.png";
 import examine from "../assets/examination.png";
+import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
 const Services = (props: Props) => {
+  const navigate = useNavigate();
   return (
     <div id="services" className="bg-stone-200">
       <div className="py-10 px-3 flex flex-col items-center justify-between gap-10">
@@ -117,7 +119,9 @@ const Services = (props: Props) => {
             recherche et de transparence pour ce que nous partageons,
             garantissant que vous n'avez accès qu'au meilleur.
           </p>
-          <button className="button">Rendezvous</button>
+          <button onClick={() => navigate("/rendez-vous")} className="button">
+            Rendezvous
+          </button>
         </div>
       </div>
     </div>

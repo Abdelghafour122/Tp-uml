@@ -11,7 +11,7 @@ const Footer = () => {
         <p className="text-center">CLINICAL, ©2023 Tous Droits Réservés.</p>
       </div>
       <div className="media text-center sm:text-left">
-        <p>Trouvez nous dans:</p>
+        <p>Trouvez nous sur:</p>
         <ul className="flex items-center justify-between gap-5">
           <li>
             <a href="#">

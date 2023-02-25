@@ -14,7 +14,7 @@ const Contacter = (props: Props) => {
   return (
     <div
       id="contacter"
-      className="py-10 px-3 flex flex-col md:flex-row items-center gap-10 my-20 xl:my-32"
+      className="py-10 px-3 flex flex-col md:flex-row items-center gap-10 sm:gap-10 md:gap-0 my-20 xl:my-32"
     >
       <div className="text flex flex-col items-start justify-center gap-10 md:basis-2/4">
         <h1 className="text-left large-header text-stone-700">
@@ -35,7 +35,7 @@ const Contacter = (props: Props) => {
         >
           <div className="name flex flex-col">
             <label htmlFor="name" className="text-stone-800">
-              Your name:
+              Votre nom:
             </label>
             <input
               type="text"
@@ -51,7 +51,7 @@ const Contacter = (props: Props) => {
 
           <div className="email flex flex-col">
             <label htmlFor="email" className="text-stone-800">
-              Your email:
+              Votre email:
             </label>
             <input
               type="email"
@@ -67,7 +67,7 @@ const Contacter = (props: Props) => {
 
           <div className="message flex flex-col">
             <label htmlFor="mssg" className="text-stone-800">
-              Write your message here:
+              Votre message ici:
             </label>
             <textarea
               id="mssg"

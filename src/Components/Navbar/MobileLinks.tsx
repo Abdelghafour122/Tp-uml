@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import NavLink from "./NavLink";
 
 type Props = {
@@ -7,6 +8,8 @@ type Props = {
 };
 
 const MobileLinks = ({ handleCloseMobileLinks }: Props) => {
+  const navigate = useNavigate();
+
   return (
     <div className="backdrop-blur-sm absolute z-50 left-0 top-0 w-full min-h-screen h-full flex flex-col items-center justify-center">
       <div className="w-3/4 mb-2">
@@ -21,26 +24,34 @@ const MobileLinks = ({ handleCloseMobileLinks }: Props) => {
         <ul className="w-full flex flex-col items-center justify-between gap-5">
           <NavLink
             text="Acceuil"
-            targetPath="/"
+            targetPath="#intro"
             clickBehavior={handleCloseMobileLinks}
           />
           <NavLink
             text="À propos"
-            targetPath="/a-propos"
+            targetPath="#a-propos"
             clickBehavior={handleCloseMobileLinks}
           />
           <NavLink
             text="Contacter"
-            targetPath="/contacter"
+            targetPath="#contacter"
             clickBehavior={handleCloseMobileLinks}
           />
           <NavLink
             text="Services"
-            targetPath="/services"
+            targetPath="#services"
             clickBehavior={handleCloseMobileLinks}
           />
           <li>
-            <button className="button">Rendezvous</button>
+            <button
+              className="button"
+              onClick={() => {
+                handleCloseMobileLinks();
+                navigate("/rendez-vous");
+              }}
+            >
+              Rendezvous
+            </button>
           </li>
         </ul>
       </div>

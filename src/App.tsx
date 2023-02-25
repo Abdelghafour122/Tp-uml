@@ -1,11 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Attribution from "./Components/Attribution";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Acceuil from "./Routes/Acceuil";
-import Apropos from "./Routes/Apropos";
-import Contacter from "./Routes/Contacter";
-import Services from "./Routes/Services";
+import RendezVous from "./Routes/RendezVous";
 
 function App() {
   return (
@@ -13,7 +12,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route element={<Acceuil />} index path="/" />
+        <Route element={<RendezVous />} path="/rendez-vous" />
       </Routes>
+      <Footer />
       <Attribution />
     </div>
   );

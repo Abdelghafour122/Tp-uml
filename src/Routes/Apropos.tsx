@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import bgImg from "../assets/old-vaccine.webp";
 type Props = {};
 
 const Apropos = (props: Props) => {
+  const navigate = useNavigate();
+
   return (
     <div
       id="a-propos"
@@ -25,8 +28,17 @@ const Apropos = (props: Props) => {
           santé mentale et physique.
         </p>
         <div className="buttons w-full flex items-center justify-start gap-5 md:gap-7 lg:gap-10">
-          <button className="button">Rendezvous</button>
-          <button className="reverse-button">Contactez nous</button>
+          <button
+            onClick={() => {
+              navigate("/rendez-vous");
+            }}
+            className="button"
+          >
+            Rendezvous
+          </button>
+          <a href="#contacter" className="reverse-button">
+            Contactez nous
+          </a>
         </div>
       </div>
     </div>
