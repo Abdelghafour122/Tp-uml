@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  label {
+    @apply font-semibold;
+  }
+}
+
 @layer components {
   #root {
     @apply min-h-screen h-full;
@@ -45,8 +51,12 @@
     @apply font-semibold text-base md:text-xl capitalize text-stone-800 text-center;
   }
 
+  .input-cont {
+    @apply flex flex-col w-full items-start justify-center;
+  }
+
   .input {
-    @apply bg-neutral-300 py-1 px-3 rounded-sm border-[2px] border-black outline-none text-stone-900 caret-stone-900;
+    @apply w-full bg-neutral-300 py-1 px-3 rounded-sm border-[2px] border-black outline-none text-stone-900 caret-stone-900;
   }
 
   /* PAGES */
