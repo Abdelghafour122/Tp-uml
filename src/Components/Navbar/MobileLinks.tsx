@@ -47,10 +47,10 @@ const MobileLinks = ({ handleCloseMobileLinks }: Props) => {
               className="button"
               onClick={() => {
                 handleCloseMobileLinks();
-                navigate("/rendez-vous");
+                navigate("/connexion");
               }}
             >
-              Rendezvous
+              Connexion
             </button>
           </li>
         </ul>
