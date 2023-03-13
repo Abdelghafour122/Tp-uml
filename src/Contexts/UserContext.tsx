@@ -32,6 +32,8 @@ const UserContext = ({ children }: AuthProviderProps) => {
   const [currentUser, setCurrentUser] = useState<User | null>();
   const [loading, setLoading] = useState(true);
 
+  const EMAIL_REGEX = /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
   const userSignUp = (email: string, password: string) => {
     return createUserWithEmailAndPassword(globalAuth, email, password);
   };
@@ -64,6 +66,7 @@ const UserContext = ({ children }: AuthProviderProps) => {
     userSignIn,
     signInWithGoogle,
     userSignOut,
+    EMAIL_REGEX,
   };
   return (
     <AuthenticationContext.Provider value={userContextValue}>

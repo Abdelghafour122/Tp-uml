@@ -1,6 +1,7 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../Contexts/UserContext";
 import NavLink from "./NavLink";
 
 type Props = {
@@ -9,6 +10,10 @@ type Props = {
 
 const MobileLinks = ({ handleCloseMobileLinks }: Props) => {
   const navigate = useNavigate();
+
+  const { currentUser, userSignOut } = useAuthContext();
+
+  const currentPage = useLocation();
 
   return (
     <div className="backdrop-blur-sm absolute z-50 left-0 top-0 w-full min-h-screen h-full flex flex-col items-center justify-center">
@@ -22,37 +27,93 @@ const MobileLinks = ({ handleCloseMobileLinks }: Props) => {
       </div>
       <div className="p-3 rounded-md shadow bg-stone-300 w-3/4">
         <ul className="w-full flex flex-col items-center justify-between gap-5">
-          <NavLink
-            text="Acceuil"
-            targetPath="#intro"
-            clickBehavior={handleCloseMobileLinks}
-          />
-          <NavLink
-            text="À propos"
-            targetPath="#a-propos"
-            clickBehavior={handleCloseMobileLinks}
-          />
-          <NavLink
-            text="Contacter"
-            targetPath="#contacter"
-            clickBehavior={handleCloseMobileLinks}
-          />
-          <NavLink
-            text="Services"
-            targetPath="#services"
-            clickBehavior={handleCloseMobileLinks}
-          />
-          <li>
-            <button
-              className="button"
-              onClick={() => {
-                handleCloseMobileLinks();
-                navigate("/connexion");
-              }}
-            >
-              Connexion
-            </button>
-          </li>
+          {currentPage.pathname === "/" ? (
+            <>
+              <NavLink
+                text="Acceuil"
+                targetPath="#intro"
+                clickBehavior={handleCloseMobileLinks}
+              />
+              <NavLink
+                text="À propos"
+                targetPath="#a-propos"
+                clickBehavior={handleCloseMobileLinks}
+              />
+              <NavLink
+                text="Contacter"
+                targetPath="#contacter"
+                clickBehavior={handleCloseMobileLinks}
+              />
+              <NavLink
+                text="Services"
+                targetPath="#services"
+                clickBehavior={handleCloseMobileLinks}
+              />
+            </>
+          ) : !currentUser ? (
+            <li>
+              <button
+                className="button"
+                onClick={() => {
+                  handleCloseMobileLinks();
+                  navigate("/connexion");
+                }}
+              >
+                Connexion
+              </button>
+            </li>
+          ) : (
+            <>
+              <li>
+                <button
+                  className="button md:block"
+                  onClick={() => navigate("/rendez-vous")}
+                >
+                  Rendezvous
+                </button>
+              </li>
+              <li>
+                <button
+                  className="button bg-red-700 hover:bg-red-600 md:block"
+                  onClick={() => userSignOut()}
+                >
+                  Déconnexion
+                </button>
+              </li>
+            </>
+          )}
+          {/* {!currentUser ? (
+            <li>
+              <button
+                className="button"
+                onClick={() => {
+                  handleCloseMobileLinks();
+                  navigate("/connexion");
+                }}
+              >
+                Connexion
+              </button>
+            </li>
+          ) : (
+            <>
+              <li>
+                <button
+                  className="button md:block"
+                  onClick={() => navigate("/rendez-vous")}
+                >
+                  Rendezvous
+                </button>
+              </li>
+              <li>
+                <button
+                  className="button bg-red-700 hover:bg-red-600 md:block"
+                  onClick={() => userSignOut()}
+                >
+                  Déconnexion
+                </button>
+              </li>
+            </>
+          )} */}
         </ul>
       </div>
     </div>

@@ -3,15 +3,14 @@ import { Link } from "react-router-dom";
 import HelperText from "../Components/HelperText";
 import { useAuthContext } from "../Contexts/UserContext";
 
-const EMAIL_REGEX = /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-const PWD_REGEX = /^.{4,}/;
+const PWD_REGEX = /^.{6,}/;
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [confPwd, setConfPwd] = useState("");
 
-  const { userSignUp } = useAuthContext();
+  const { userSignUp, EMAIL_REGEX } = useAuthContext();
 
   const handleSignUp = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -20,10 +19,14 @@ const SignUp = () => {
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
     }
+    setEmail("");
+    setPwd("");
   };
   return (
     <section className="h-screen flex flex-col items-center justify-center gap-10">
-      <h1 className="text-5xl font-bold text-stone-800">Créer un compte</h1>
+      <h1 className="text-5xl font-bold text-stone-800 text-center">
+        Créer un compte
+      </h1>
       <form className="flex flex-col gap-4" action="" onSubmit={handleSignUp}>
         <div className="input-cont">
           <label htmlFor="email">Email:</label>
@@ -48,7 +51,7 @@ const SignUp = () => {
             onChange={(e) => setPwd(e.target.value.trim())}
           />
           {!PWD_REGEX.test(pwd) && pwd ? (
-            <HelperText textContent="Mot de passe doit contenir au moin 4 lettres!" />
+            <HelperText textContent="Mot de passe doit contenir au moin 6 lettres!" />
           ) : null}
         </div>
         <div className="input-cont">
