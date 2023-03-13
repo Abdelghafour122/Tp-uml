@@ -49,8 +49,71 @@ const MobileLinks = ({ handleCloseMobileLinks }: Props) => {
                 targetPath="#services"
                 clickBehavior={handleCloseMobileLinks}
               />
+              {currentUser ? (
+                <>
+                  <li>
+                    <button
+                      className="button md:block"
+                      onClick={() => {
+                        handleCloseMobileLinks();
+                        navigate("/rendez-vous");
+                      }}
+                    >
+                      Rendezvous
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="button bg-red-700 hover:bg-red-600 md:block"
+                      onClick={() => {
+                        handleCloseMobileLinks();
+                        userSignOut();
+                      }}
+                    >
+                      Déconnexion
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <button
+                    className="button"
+                    onClick={() => {
+                      handleCloseMobileLinks();
+                      navigate("/connexion");
+                    }}
+                  >
+                    Connexion
+                  </button>
+                </li>
+              )}
             </>
-          ) : !currentUser ? (
+          ) : currentUser ? (
+            <>
+              <li>
+                <button
+                  className="button md:block"
+                  onClick={() => {
+                    handleCloseMobileLinks();
+                    navigate("/rendez-vous");
+                  }}
+                >
+                  Rendezvous
+                </button>
+              </li>
+              <li>
+                <button
+                  className="button bg-red-700 hover:bg-red-600 md:block"
+                  onClick={() => {
+                    handleCloseMobileLinks();
+                    userSignOut();
+                  }}
+                >
+                  Déconnexion
+                </button>
+              </li>
+            </>
+          ) : (
             <li>
               <button
                 className="button"
@@ -62,58 +125,7 @@ const MobileLinks = ({ handleCloseMobileLinks }: Props) => {
                 Connexion
               </button>
             </li>
-          ) : (
-            <>
-              <li>
-                <button
-                  className="button md:block"
-                  onClick={() => navigate("/rendez-vous")}
-                >
-                  Rendezvous
-                </button>
-              </li>
-              <li>
-                <button
-                  className="button bg-red-700 hover:bg-red-600 md:block"
-                  onClick={() => userSignOut()}
-                >
-                  Déconnexion
-                </button>
-              </li>
-            </>
           )}
-          {/* {!currentUser ? (
-            <li>
-              <button
-                className="button"
-                onClick={() => {
-                  handleCloseMobileLinks();
-                  navigate("/connexion");
-                }}
-              >
-                Connexion
-              </button>
-            </li>
-          ) : (
-            <>
-              <li>
-                <button
-                  className="button md:block"
-                  onClick={() => navigate("/rendez-vous")}
-                >
-                  Rendezvous
-                </button>
-              </li>
-              <li>
-                <button
-                  className="button bg-red-700 hover:bg-red-600 md:block"
-                  onClick={() => userSignOut()}
-                >
-                  Déconnexion
-                </button>
-              </li>
-            </>
-          )} */}
         </ul>
       </div>
     </div>

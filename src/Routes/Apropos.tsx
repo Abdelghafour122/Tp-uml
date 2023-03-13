@@ -1,11 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import bgImg from "../assets/old-vaccine.webp";
+import { useAuthContext } from "../Contexts/UserContext";
 type Props = {};
 
 const Apropos = (props: Props) => {
   const navigate = useNavigate();
-
+  const { currentUser } = useAuthContext();
   return (
     <div
       id="a-propos"
@@ -30,7 +31,7 @@ const Apropos = (props: Props) => {
         <div className="buttons w-full flex items-center justify-start gap-5 md:gap-7 lg:gap-10">
           <button
             onClick={() => {
-              navigate("/rendez-vous");
+              currentUser ? navigate("/rendez-vous") : navigate("/connexion");
             }}
             className="button"
           >

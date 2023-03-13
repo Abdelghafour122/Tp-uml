@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import fitness from "../assets/fitness.webp";
 import health from "../assets/health.webp";
 import nutrition from "../assets/nutrition.webp";
@@ -10,11 +10,13 @@ import doctor from "../assets/doctor.png";
 import ambulance from "../assets/ambulance.png";
 import examine from "../assets/examination.png";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../Contexts/UserContext";
 
 type Props = {};
 
 const Services = (props: Props) => {
   const navigate = useNavigate();
+  const { currentUser } = useAuthContext();
   return (
     <div id="services" className="bg-stone-200">
       <div className="py-10 px-3 flex flex-col items-center justify-between gap-10">
@@ -119,7 +121,12 @@ const Services = (props: Props) => {
             recherche et de transparence pour ce que nous partageons,
             garantissant que vous n'avez accès qu'au meilleur.
           </p>
-          <button onClick={() => navigate("/rendez-vous")} className="button">
+          <button
+            onClick={() =>
+              currentUser ? navigate("/rendez-vous") : navigate("/connexion")
+            }
+            className="button"
+          >
             Rendezvous
           </button>
         </div>
